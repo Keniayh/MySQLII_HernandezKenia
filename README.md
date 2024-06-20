@@ -9,3 +9,9 @@ Se desea diseñar una base de datos para guardar la información sobre médicos,
 
 
 <a href="https://docs.google.com/document/d/1Ik8YEX7ezRNuelLSjHqt4lnWORwiQBebJgDC-8wF3Jk/edit?usp=sharing">Documentación del proceso</a>
+<br>
+
+<h1>Dia 2</h1>
+<h2>Descripción</h2><br>
+
+<p>Consultas con funciones, procedimientos y sets de acuerdo al caso donde aplique, donde mandarás a esta tarea la evidencia de subida a GitHub de dicho trabajo.</p>
