@@ -392,9 +392,45 @@ ORDER BY e.nombre ASC, e.apellido1 ASC, e.apellido2 ASC;
 -- departamento de Sistemas, Contabilidad o I+D. Ordena el resultado
 -- alfabéticamente.
 
+SELECT
+	e.id,
+    e.nif,
+	e.nombre AS nombre_empleado,
+    e.apellido1,
+    e.apellido2,
+    e.id_departamento
+FROM empleado e
+JOIN departamento d ON e.id_departamento = d.id
+WHERE d.nombre = 'Sistemas' OR d.nombre = 'Contabilidad' OR d.nombre = 'I+D'
+ORDER BY e.nombre ASC, e.apellido1 ASC, e.apellido2 ASC;
+
+
 -- 9. Devuelve una lista con el nombre de los empleados que tienen los
 -- departamentos que no tienen un presupuesto entre 100000 y 200000 euros.
+
+SELECT
+	e.nombre AS nombre_empleado
+FROM empleado e
+JOIN departamento d ON e.id_departamento = d.id
+WHERE d.presupuesto NOT BETWEEN 100000 AND 200000 
+ORDER BY e.nombre ASC, e.apellido1 ASC, e.apellido2 ASC;
 
 -- 10. Devuelve un listado con el nombre de los departamentos donde existe
 -- algún empleado cuyo segundo apellido sea NULL. Tenga en cuenta que no
 -- debe mostrar nombres de departamentos que estén repetidos.
+
+SELECT DISTINCT
+	d.nombre AS nombre_departamento
+FROM empleado e
+JOIN departamento d ON e.id_departamento = d.id
+WHERE e.apellido2 IS NULL;
+
+-- CONSULTA MULTITABLA (COMPOSICIÓN EXTERNA)
+
+-- 1. Devuelve un listado con todos los empleados junto con los datos de los
+-- departamentos donde trabajan. Este listado también debe incluir los
+-- empleados que no tienen ningún departamento asociado.
+
+SELECT *
+FROM empleado e
+LEFT JOIN departamento d ON e.id_departamento = d.id;
