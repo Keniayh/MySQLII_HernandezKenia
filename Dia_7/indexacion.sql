@@ -58,6 +58,9 @@ WHERE
     p.gama = 'frutas' AND p.proveedor = 'Frutas Talaveras S.A';
 
 
--- INDICES
+-- INDEXACIÓN
+
+CREATE INDEX name_garden ON empleado (nombre, apellido1);
+CREATE INDEX 
 
 -- Desarrollado por Kenia Yulieth Hernández Díaz / ID.1.098.386.069
